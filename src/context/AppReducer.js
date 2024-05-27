@@ -16,7 +16,7 @@
 //   }
 
 
-  const reducer = (state, action) => {
+const reducer = (state, action) => {
 	switch(action.type) {
 	  case 'DELETE_TRANSACTION':
 		return {
@@ -32,3 +32,10 @@
 		return state;
 	}
   }
+  
+  // Example usage of the reducer function
+  const initialState = { transactions: [] };
+  const action = { type: 'ADD_TRANSACTION', payload: { id: 1, amount: 100 } };
+  const nextState = reducer(initialState, action);
+  
+  console.log(nextState);
